@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="100" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ol-zF-Qf7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="100" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ol-zF-Qf7">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -24,7 +24,23 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Item" id="Qhu-PE-NZB"/>
+                                    <barButtonItem title="Camera" id="Qhu-PE-NZB">
+                                        <connections>
+                                            <action selector="useCamera:" destination="vXZ-lx-hvc" id="eDH-9e-lfe"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="O03-uL-WGL">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YeZ-xu-AEo">
+                                            <rect key="frame" x="87" y="6" width="85" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Camera Roll">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <connections>
+                                            <action selector="useCameraRoll:" destination="vXZ-lx-hvc" id="CWv-Ts-ZsX"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -32,13 +48,20 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="0ol-zF-Qf7" secondAttribute="trailing" constant="20" id="2IL-k9-5oQ"/>
                             <constraint firstItem="LTo-l8-EVh" firstAttribute="top" secondItem="cIX-Rk-Osv" secondAttribute="bottom" constant="12" id="7YF-nZ-HLH"/>
+                            <constraint firstItem="gRe-cB-AEW" firstAttribute="top" secondItem="0ol-zF-Qf7" secondAttribute="bottom" constant="12" id="Adl-lv-hPJ"/>
                             <constraint firstItem="0ol-zF-Qf7" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="ME4-ej-xbT"/>
+                            <constraint firstItem="LTo-l8-EVh" firstAttribute="top" secondItem="cIX-Rk-Osv" secondAttribute="bottom" constant="12" id="VxJ-4p-U0c"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="0ol-zF-Qf7" secondAttribute="trailing" constant="20" id="WbT-Xl-Rwz"/>
                             <constraint firstItem="0ol-zF-Qf7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="aPK-n3-l20"/>
                             <constraint firstItem="0ol-zF-Qf7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="bhu-jy-Yy9"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0ol-zF-Qf7" secondAttribute="trailing" constant="20" id="eqm-YX-eH9"/>
                             <constraint firstItem="0ol-zF-Qf7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="qQ8-PX-3Je"/>
+                            <constraint firstItem="0ol-zF-Qf7" firstAttribute="leading" relation="lessThanOrEqual" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="vCr-tK-QXs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraImageView" destination="0ol-zF-Qf7" id="X8K-tM-ShL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
