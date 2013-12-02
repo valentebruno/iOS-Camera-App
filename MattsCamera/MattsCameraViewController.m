@@ -38,11 +38,9 @@
     if ([UIImagePickerController isSourceTypeAvailable:
          UIImagePickerControllerSourceTypeCamera])
     {
-        UIImagePickerController *imagePicker =
-        [[UIImagePickerController alloc] init];
+        UIImagePickerController *imagePicker =[[UIImagePickerController alloc] init];
         imagePicker.delegate = self;
-        imagePicker.sourceType =
-        UIImagePickerControllerSourceTypeCamera;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
         imagePicker.allowsEditing = NO;
         [self presentViewController:imagePicker
@@ -50,7 +48,6 @@
         _newMedia = YES;
     }
 }
-
 - (IBAction)useCameraRoll:(id)sender
 {
     if ([UIImagePickerController isSourceTypeAvailable:
@@ -59,8 +56,7 @@
         UIImagePickerController *imagePicker =
         [[UIImagePickerController alloc] init];
         imagePicker.delegate = self;
-        imagePicker.sourceType =
-        UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
         imagePicker.allowsEditing = NO;
         [self presentViewController:imagePicker
